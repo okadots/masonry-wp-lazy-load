@@ -11,6 +11,4 @@ masonry-wp-lazy-load
 <p>The solution to this was to use php getimagesize() to return the proper values of the specific image size I was looking for.&nbsp;</p>
 <p>Once the placeholder image has been given the size of the image you are loading -- it successfully <em>holds the place (har har)</em> of the not yet loaded image. And <strong>ta-dah!</strong> you have a&nbsp;beautiful&nbsp;lazy loaded masonry style gallery.</p>
 <p>Maybe you already knew how to do this, but maybe this will also help someone who didn't know how to do it and this will save them many hours.</p>
-<p>See final code below (sorry - don't know of a good way to display code you can copy/paste in Tumblr)</p>
-<p><img alt="image" src="http://media.tumblr.com/9156a2f43442eaf91eb54e19504991c0/tumblr_inline_mo7ar5TGRP1qz4rgp.png" /></p>
-<p></p>
+
