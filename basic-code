@@ -1,0 +1,38 @@
+<?php get_header(); ?>
+	</div>
+	<section class="masonry clearfix" id="scrolling">
+
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+	
+			<?php $images = get_field('masonry'); if( $images ): ?>
+
+				<?php foreach( $images as $image ): ?>
+					<div class="item">
+						<?php list($width, $height) = getimagesize($image['sizes']['masonry_thumb']); ?>
+						
+						<?php if(!empty($image['caption'])): ?>
+						<p><?php echo $image['caption']; ?></p>
+						<?php endif;?>
+						<?php if(!empty($image['description'])): ?>
+						
+						<a href="<?php echo $image['url']; ?>" rel="gallery" class="pop" title="<a href='<?php echo $image['description']; ?>' target='_blank'><?php echo $image['caption']; ?> &raquo;</a>"><img class="lazy" src="<?php bloginfo('template_directory'); ?>/images/pixel_dark.png" data-original="<?php echo $image['sizes']['masonry_thumb']; ?>" alt="<?php echo $image['alt']; ?>" style="width:250px !important; height:<?php echo $height; ?>px !important;"  width="250" height="<?php echo $height; ?>" />	
+						
+						</a>
+						<?php else : ?>
+							<a href="<?php echo $image['url']; ?>" rel="gallery" class="pop" title="<?php echo $image['caption']; ?>"><img class="lazy" style="width:250px !important; height:<?php echo $height; ?>px !important;" data-original="<?php echo $image['sizes']['masonry_thumb']; ?>" src="<?php bloginfo('template_directory'); ?>/images/pixel_dark.png" alt="<?php echo $image['alt']; ?>" width="250" height="<?php echo $height; ?>" />
+							</a>
+						
+						<?php endif;?>
+							
+					</div>
+				<?php endforeach; ?>
+			<?php endif; ?>	
+			
+		<?php endwhile; endif; ?>
+	</section>
+	<div id="container">
+<?php get_footer(); ?>
+
+
+
